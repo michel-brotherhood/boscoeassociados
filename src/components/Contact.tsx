@@ -1,74 +1,86 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Contact = () => {
   return (
-    <section id="contato" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Entre em Contato</h2>
-            <p className="text-muted-foreground mb-8">
-              Estamos prontos para atender suas necessidades. Entre em contato conosco e
-              descubra como podemos ajudar seu projeto.
-            </p>
+    <section id="contato" className="py-16 bg-background">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold mb-4">SEJA NOSSO CLIENTE.</h2>
+          <p className="text-muted-foreground text-lg">
+            Somos uma empresa especializada
+          </p>
+          <p className="text-muted-foreground text-lg">
+            em consultoria e comissionamento
+          </p>
+          <p className="text-muted-foreground text-lg">
+            de instalações prediais.
+          </p>
+        </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Telefone</h3>
-                  <p className="text-muted-foreground">+55 (11) 4323-4680</p>
-                </div>
+        <div className="bg-card border rounded p-8 shadow-sm">
+          <form className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Input placeholder="Nome" className="h-9" />
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">contato@diteceng.com.br</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Localização</h3>
-                  <p className="text-muted-foreground">
-                    São Paulo, Belo Horizonte, Rio de Janeiro e Brasília
-                  </p>
-                </div>
+              <div>
+                <Input placeholder="Email" type="email" className="h-9" />
               </div>
             </div>
-          </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Input placeholder="Telefone" className="h-9" />
+              </div>
+              <div>
+                <Input placeholder="Empresa" className="h-9" />
+              </div>
+            </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-lg">
-            <form className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <Input placeholder="Seu Nome" />
+                <Select>
+                  <SelectTrigger className="h-9">
+                    <SelectValue placeholder="Estado" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="SP">São Paulo</SelectItem>
+                    <SelectItem value="MG">Minas Gerais</SelectItem>
+                    <SelectItem value="RJ">Rio de Janeiro</SelectItem>
+                    <SelectItem value="DF">Distrito Federal</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div>
-                <Input placeholder="Seu Email" type="email" />
+                <Input placeholder="Cidade" className="h-9" />
               </div>
-              <div>
-                <Input placeholder="Assunto" />
-              </div>
-              <div>
-                <Textarea placeholder="Sua Mensagem" rows={5} />
-              </div>
-              <Button className="w-full" size="lg">
-                Enviar Mensagem
-              </Button>
-            </form>
-          </div>
+            </div>
+
+            <div>
+              <Select>
+                <SelectTrigger className="h-9">
+                  <SelectValue placeholder="Selecione o serviço" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="consultoria">CONSULTORIA</SelectItem>
+                  <SelectItem value="fiscalizacao">FISCALIZAÇÃO</SelectItem>
+                  <SelectItem value="comissionamento">COMISSIONAMENTO</SelectItem>
+                  <SelectItem value="ensaios">ENSAIOS E TESTES</SelectItem>
+                  <SelectItem value="projetos">PROJETOS</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Input placeholder="Assunto" className="h-9" />
+            </div>
+
+            <Button className="w-full bg-secondary hover:bg-secondary/90" size="lg">
+              Enviar
+            </Button>
+          </form>
         </div>
       </div>
     </section>
