@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import aboutImage from "@/assets/about-engineering.jpg";
+import aboutBackground from "@/assets/about-background.webp";
 import { useEffect, useRef, useState } from "react";
 
 const About = () => {
@@ -31,9 +32,22 @@ const About = () => {
     <section 
       id="sobre" 
       ref={sectionRef}
-      className="py-16 md:py-20 lg:py-24 bg-background"
+      className="py-16 md:py-20 lg:py-24 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      {/* Background image with white overlay */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${aboutBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-white/85"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center relative">
           {/* Image Section - Left Side */}
           <div 
