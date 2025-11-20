@@ -12,8 +12,9 @@ const CTA = () => {
           lacinia vel, luctus eget, aliquet nec.
         </p>
         <Button 
+          variant="3d"
           size="lg" 
-          className="bg-secondary hover:bg-secondary/90 text-white font-bold px-6 py-5 text-sm"
+          className="font-bold px-6 py-5 text-sm"
         >
           PEÇA O SEU ORÇAMENTO
         </Button>

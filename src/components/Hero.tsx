@@ -22,7 +22,7 @@ const Hero = () => {
           WP Engenharia é Lorem ipsum dolor sit amet, consectetur adipiscing<br className="hidden md:block" />
           elit. Ut purus non, lacinia vel, ullamcorper mauris pulvinar libero leo.
         </p>
-        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold px-6 md:px-8 py-2.5 md:py-3 text-xs md:text-sm rounded">
+        <Button variant="3d" size="lg" className="font-bold px-6 md:px-8 text-xs md:text-sm">
           PEÇA O SEU ORÇAMENTO
         </Button>
       </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -10,23 +11,29 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const Index = () => {
+  const [showLoading, setShowLoading] = useState(true);
+
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <Features />
-      <About />
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Clients />
-      <FAQ />
-      <CTA />
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <>
+      {showLoading && <LoadingScreen onComplete={() => setShowLoading(false)} />}
+      <div className="min-h-screen">
+        <Header />
+        <Hero />
+        <Features />
+        <About />
+        <Services />
+        <Portfolio />
+        <Testimonials />
+        <Clients />
+        <FAQ />
+        <CTA />
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </>
   );
 };
 
