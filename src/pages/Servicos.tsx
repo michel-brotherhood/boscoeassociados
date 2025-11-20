@@ -5,6 +5,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { MenuProvider } from "@/contexts/MenuContext";
+import heroServicos from "@/assets/hero-servicos.jpg";
 
 const Servicos = () => {
   return (
@@ -16,6 +17,7 @@ const Servicos = () => {
           breadcrumbs={[
             { label: "Início", path: "/" }
           ]}
+          backgroundImage={heroServicos}
         />
         <main className="py-12">
           <Services />
