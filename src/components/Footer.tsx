@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
+import { FaGoogle } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import logo from "@/assets/logo-bosco-white.svg";
 
@@ -15,14 +16,14 @@ const Footer = () => {
               Engenharia de excelência com soluções inovadoras para seus projetos.
             </p>
             <div className="flex gap-2">
-              <a href="https://www.facebook.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
-                <Facebook className="h-3 w-3" />
-              </a>
-              <a href="https://www.instagram.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
+              <a href="https://www.instagram.com/boscoassociados/" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
                 <Instagram className="h-3 w-3" />
               </a>
-              <a href="https://wa.me/5521993698629" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
-                <FaWhatsapp className="h-3 w-3" />
+              <a href="https://www.linkedin.com/company/bosco-associados-ltda/?originalSubdomain=br" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
+                <Linkedin className="h-3 w-3" />
+              </a>
+              <a href="https://www.google.com/search?q=bosco+%26+associados&ie=UTF-8#lrd=0x9983c45fd89495:0x1b4bc8fd0ececf74,1,,,," target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
+                <FaGoogle className="h-3 w-3" />
               </a>
             </div>
           </div>
