@@ -62,17 +62,12 @@ const Footer = () => {
 
           <div>
             <h4 className="font-bold mb-3 text-xs">Localização</h4>
-            <div className="rounded h-32 overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.1234567890!2d-43.1234567890!3d-22.8987654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUzJzU1LjYiUyA0M8KwMDcnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr&q=Avenida+Ernani+do+Amaral+Peixoto,+96+Sala+904,+Centro,+Niterói,+RJ"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
+            <p className="text-xs opacity-75 leading-relaxed">
+              Av. Ernani do Amaral Peixoto, 96<br/>
+              Sala 904 - Centro<br/>
+              Niterói - RJ<br/>
+              CEP: 24020-074
+            </p>
           </div>
         </div>
 
