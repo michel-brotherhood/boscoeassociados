@@ -126,7 +126,7 @@ const Clientes = () => {
               {clients.map((client, index) => (
                 <div
                   key={index}
-                  className={`group bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:border-primary/50 transition-all duration-500 flex items-center justify-center ${
+                  className={`group transition-all duration-500 flex items-center justify-center p-4 ${
                     isVisible 
                       ? 'opacity-100 translate-y-0' 
                       : 'opacity-0 translate-y-10'

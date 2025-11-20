@@ -15,13 +15,13 @@ const Footer = () => {
               Engenharia de excelência com soluções inovadoras para seus projetos.
             </p>
             <div className="flex gap-2">
-              <a href="https://www.facebook.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://www.facebook.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
                 <Facebook className="h-3 w-3" />
               </a>
-              <a href="https://www.instagram.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://www.instagram.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
                 <Instagram className="h-3 w-3" />
               </a>
-              <a href="https://wa.me/5521993698629" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://wa.me/5521993698629" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded-full flex items-center justify-center hover:bg-primary/80 transition-colors">
                 <FaWhatsapp className="h-3 w-3" />
               </a>
             </div>
@@ -41,10 +41,6 @@ const Footer = () => {
               <div className="flex items-start gap-2">
                 <Mail className="h-3 w-3 mt-0.5 flex-shrink-0" />
                 <span>bassociados@bassociados.com</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                <span>Av. Ernani do Amaral Peixoto, 96 Sala 904<br/>Centro - Niterói - RJ<br/>CEP.: 24020-074</span>
               </div>
             </div>
           </div>
