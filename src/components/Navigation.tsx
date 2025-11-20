@@ -13,9 +13,9 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-primary text-primary-foreground sticky top-0 z-50 shadow-md">
+    <nav className="bg-primary text-primary-foreground sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-12">
+        <div className="flex items-center justify-between h-10">
           <ul className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <li key={item.label}>
