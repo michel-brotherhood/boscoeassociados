@@ -65,6 +65,11 @@ const Header = () => {
                   <a
                     href={item.href}
                     className="hover:opacity-80 transition-opacity text-sm font-semibold"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.querySelector(item.href);
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                   >
                     {item.label}
                   </a>
@@ -101,7 +106,14 @@ const Header = () => {
                   <a
                     href={item.href}
                     className="text-white text-xl font-medium hover:text-secondary transition-colors"
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsOpen(false);
+                      setTimeout(() => {
+                        const element = document.querySelector(item.href);
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                      }, 300);
+                    }}
                   >
                     {item.label}
                   </a>
