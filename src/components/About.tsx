@@ -31,13 +31,13 @@ const About = () => {
     <section 
       id="sobre" 
       ref={sectionRef}
-      className="py-16 md:py-20 lg:py-24 bg-muted"
+      className="py-16 md:py-20 lg:py-24 bg-background"
     >
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
-          {/* Image Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center relative">
+          {/* Image Section - Left Side */}
           <div 
-            className={`relative h-[400px] lg:h-auto transition-all duration-1000 delay-100 ${
+            className={`relative h-[400px] lg:h-[600px] transition-all duration-1000 delay-100 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
@@ -48,16 +48,16 @@ const About = () => {
             />
           </div>
 
-          {/* Content Section */}
+          {/* Content Card - Right Side with Overlap */}
           <div 
-            className={`bg-white p-8 md:p-12 lg:p-16 flex flex-col justify-center shadow-lg transition-all duration-1000 delay-300 ${
+            className={`bg-white p-8 md:p-10 lg:p-12 xl:p-16 flex flex-col justify-center shadow-2xl lg:ml-[-100px] relative z-10 transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
             }`}
           >
             <p className="text-primary text-xs md:text-sm font-bold mb-2 uppercase tracking-wider">
               UM POUCO
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-foreground leading-tight">
               Sobre a Empresa
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
@@ -82,7 +82,7 @@ const About = () => {
             </div>
             <Button 
               variant="3d"
-              className="mt-8 font-bold px-8 text-sm md:text-base w-fit"
+              className="mt-8 font-bold px-8 py-6 text-sm md:text-base w-fit"
             >
               SAIBA MAIS
             </Button>
