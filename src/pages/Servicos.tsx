@@ -9,7 +9,7 @@ const Servicos = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <PageHero 
-        title="Nossos Serviços"
+        title="Atuação"
         breadcrumbs={[
           { label: "Início", path: "/" }
         ]}
