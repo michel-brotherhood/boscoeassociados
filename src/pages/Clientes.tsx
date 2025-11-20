@@ -25,6 +25,16 @@ import helborLogo from "@/assets/clients/helbor.webp";
 import ittenLogo from "@/assets/clients/itten.webp";
 import marriotLogo from "@/assets/clients/marriot.webp";
 import metroLogo from "@/assets/clients/metrorj.webp";
+import mozakLogo from "@/assets/clients/mozark.webp";
+import multiplanLogo from "@/assets/clients/multiplan.webp";
+import onetekLogo from "@/assets/clients/onetek.webp";
+import opportunityLogo from "@/assets/clients/opportunity.webp";
+import racionalLogo from "@/assets/clients/racional.webp";
+import rafLogo from "@/assets/clients/raf.webp";
+import redeDorLogo from "@/assets/clients/rede-dor-saoluiz.webp";
+import rosewoodLogo from "@/assets/clients/rosewood.webp";
+import santaIsabelLogo from "@/assets/clients/santa-isabel.webp";
+import sescLogo from "@/assets/clients/sesc.webp";
 
 const clients = [
   { name: "Accor Hotels", logo: accorLogo },
@@ -47,6 +57,16 @@ const clients = [
   { name: "Itten", logo: ittenLogo },
   { name: "Marriott", logo: marriotLogo },
   { name: "Metrô Rio", logo: metroLogo },
+  { name: "Mozak", logo: mozakLogo },
+  { name: "Multiplan", logo: multiplanLogo },
+  { name: "OneTek Engenharia", logo: onetekLogo },
+  { name: "Opportunity", logo: opportunityLogo },
+  { name: "Racional", logo: racionalLogo },
+  { name: "RAF Arquitetura", logo: rafLogo },
+  { name: "Rede D'Or São Luiz", logo: redeDorLogo },
+  { name: "Rosewood Hotels & Resorts", logo: rosewoodLogo },
+  { name: "Grupo Santa Isabel", logo: santaIsabelLogo },
+  { name: "SESC", logo: sescLogo },
 ];
 
 const Clientes = () => {
