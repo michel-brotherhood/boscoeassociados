@@ -13,7 +13,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50">
+    <header>
       {/* Top bar */}
       <div className="bg-[#2a2a2a] text-white">
         <div className="container mx-auto px-4">
