@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-industrial.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative h-[550px] flex items-center justify-center text-white">
+    <section id="home" className="relative h-[550px] flex items-center justify-center text-white mb-[-80px]">
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[#1a2332]/85"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-4 relative z-10 text-center pb-20">
         <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight tracking-tight">
           TIRAMOS O SEU PROJETO<br />
           DOS SONHOS DO PAPEL
