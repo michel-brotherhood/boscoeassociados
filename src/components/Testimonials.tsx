@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const testimonials = [
   {
@@ -18,6 +18,29 @@ const testimonials = [
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -28,31 +51,41 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 bg-secondary text-secondary-foreground">
+    <section ref={sectionRef} className="py-12 md:py-16 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <p className="text-primary text-xs font-semibold mb-1 uppercase tracking-wide">O que estão</p>
-          <h2 className="text-2xl md:text-3xl font-bold">
+        <div className={`mb-6 md:mb-8 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <p className="text-primary text-xs md:text-sm font-semibold mb-1 uppercase tracking-wide">O que estão</p>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
             Dizendo Sobre Nós
           </h2>
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-secondary-foreground/5 p-6 rounded">
-                <p className="text-sm mb-6 leading-relaxed opacity-90">
+              <div 
+                key={index} 
+                className={`bg-secondary-foreground/5 p-4 md:p-6 rounded transition-all duration-700 ${
+                  isVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <p className="text-xs md:text-sm mb-4 md:mb-6 leading-relaxed opacity-90">
                   {testimonial.text}
                 </p>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 md:gap-3">
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover"
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover"
                   />
                   <div>
-                    <div className="font-bold text-sm">{testimonial.name}</div>
-                    <div className="text-xs opacity-75">{testimonial.role}</div>
+                    <div className="font-bold text-xs md:text-sm">{testimonial.name}</div>
+                    <div className="text-[10px] md:text-xs opacity-75">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
