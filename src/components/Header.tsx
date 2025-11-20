@@ -112,8 +112,9 @@ const Header = () => {
 
           <div className="pb-12 px-8">
             <Button 
+              variant="3d"
               size="lg" 
-              className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-base py-6"
+              className="w-full font-bold text-base py-6"
               onClick={() => {
                 setIsOpen(false);
                 window.location.href = '#contato';
