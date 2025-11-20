@@ -17,7 +17,7 @@ const Header = () => {
       {/* Top bar */}
       <div className="bg-[#2a2a2a] text-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-between py-3 gap-4">
+          <div className="flex items-center justify-between py-3">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
                 <span className="text-white font-bold text-lg">WP</span>
@@ -28,7 +28,8 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-8">
+            {/* Desktop contact info */}
+            <div className="hidden md:flex items-center gap-8">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
                 <div>
@@ -36,7 +37,7 @@ const Header = () => {
                   <div className="text-[10px] opacity-75">Fale Conosco</div>
                 </div>
               </div>
-              <div className="hidden md:flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
                 <div>
                   <div className="text-xs font-semibold">contato@wpengenharia.com.br</div>
@@ -44,15 +45,24 @@ const Header = () => {
                 </div>
               </div>
             </div>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 z-50 relative"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Navigation bar */}
-      <nav className="bg-primary text-primary-foreground">
+      {/* Desktop Navigation bar */}
+      <nav className="hidden md:block bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-12">
-            <ul className="hidden md:flex items-center space-x-6">
+            <ul className="flex items-center space-x-6">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <a
@@ -65,7 +75,7 @@ const Header = () => {
               ))}
             </ul>
 
-            <div className="hidden md:flex items-center gap-3 ml-auto">
+            <div className="flex items-center gap-3 ml-auto">
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <Facebook className="h-4 w-4" />
               </a>
@@ -76,23 +86,20 @@ const Header = () => {
                 <FaWhatsapp className="h-4 w-4" />
               </a>
             </div>
-
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
           </div>
+        </div>
+      </nav>
 
-          {isOpen && (
-            <ul className="md:hidden pb-4 space-y-2">
+      {/* Mobile fullscreen menu */}
+      {isOpen && (
+        <div className="md:hidden fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center">
+          <nav className="w-full">
+            <ul className="flex flex-col items-center space-y-8">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="block px-4 py-2 hover:bg-primary/90 transition-colors text-sm font-medium"
+                    className="text-white text-xl font-medium hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
@@ -100,9 +107,21 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-          )}
+
+            <div className="flex items-center justify-center gap-6 mt-12">
+              <a href="#" className="text-white hover:text-primary transition-colors">
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a href="#" className="text-white hover:text-primary transition-colors">
+                <Instagram className="h-6 w-6" />
+              </a>
+              <a href="#" className="text-white hover:text-primary transition-colors">
+                <FaWhatsapp className="h-6 w-6" />
+              </a>
+            </div>
+          </nav>
         </div>
-      </nav>
+      )}
     </header>
   );
 };
