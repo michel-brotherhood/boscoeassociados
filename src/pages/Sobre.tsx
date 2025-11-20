@@ -5,6 +5,7 @@ import QualityControl from "@/components/QualityControl";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { MenuProvider } from "@/contexts/MenuContext";
+import heroSobre from "@/assets/hero-sobre.jpg";
 
 const Sobre = () => {
   return (
@@ -16,6 +17,7 @@ const Sobre = () => {
           breadcrumbs={[
             { label: "Início", path: "/" }
           ]}
+          backgroundImage={heroSobre}
         />
         <main className="py-12">
           <About />

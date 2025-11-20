@@ -10,6 +10,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, Clock } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { MenuProvider } from "@/contexts/MenuContext";
+import InputMask from "react-input-mask";
+import heroContato from "@/assets/hero-contato.jpg";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
@@ -64,6 +66,7 @@ const Contato = () => {
         breadcrumbs={[
           { label: "Início", path: "/" }
         ]}
+        backgroundImage={heroContato}
       />
       
       <main id="contato" className="bg-background">
@@ -127,12 +130,19 @@ const Contato = () => {
                       <label className="block text-sm font-medium mb-2 text-foreground">
                         Telefone *
                       </label>
-                      <input
-                        type="tel"
-                        placeholder="(00) 00000-0000"
+                      <InputMask
+                        mask="(99) 99999-9999"
                         {...register("phone")}
-                        className="w-full px-4 py-3 border border-input rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      />
+                      >
+                        {(inputProps: any) => (
+                          <input
+                            {...inputProps}
+                            type="tel"
+                            placeholder="(00) 00000-0000"
+                            className="w-full px-4 py-3 border border-input rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                          />
+                        )}
+                      </InputMask>
                       {errors.phone && (
                         <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>
                       )}

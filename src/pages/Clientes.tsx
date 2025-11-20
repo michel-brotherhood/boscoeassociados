@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useEffect, useRef, useState } from "react";
 import { MenuProvider } from "@/contexts/MenuContext";
+import heroClientes from "@/assets/hero-clientes.jpg";
 
 // Import client logos
 import accorLogo from "@/assets/clients/accor.webp";
@@ -105,6 +106,7 @@ const Clientes = () => {
         breadcrumbs={[
           { label: "Início", path: "/" }
         ]}
+        backgroundImage={heroClientes}
       />
       
       <main className="py-16">

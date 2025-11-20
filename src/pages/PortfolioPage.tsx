@@ -4,6 +4,7 @@ import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { MenuProvider } from "@/contexts/MenuContext";
+import heroPortfolio from "@/assets/hero-portfolio.jpg";
 
 const PortfolioPage = () => {
   return (
@@ -15,6 +16,7 @@ const PortfolioPage = () => {
           breadcrumbs={[
             { label: "Início", path: "/" }
           ]}
+          backgroundImage={heroPortfolio}
         />
         <main className="py-12">
           <Portfolio />
