@@ -58,26 +58,14 @@ const About = () => {
               UM POUCO
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-foreground leading-tight">
-              Sobre a Empresa
+              Quem Somos
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut ent tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                A BOSCO & ASSOCIADOS é composta de uma equipe altamente técnica, especializada e treinada, constituída de Consultores, Engenheiros, Arquitetos, Técnicos, Projetistas e Desenhistas, prontos à atender aos Clientes com soluções personalizadas através de tecnologias no estado da arte.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut ent tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut ent tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut ent tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut ent tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, ut ent tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                Há 22 anos, vem a cada dia conquistando uma reputação inquestionável como uma das mais eficientes empresas de projeto e consultoria de Sistemas Eletrônicos do mercado nacional e com alguns projetos internacionais, nas áreas prediais e industriais.
               </p>
             </div>
             <Button 
