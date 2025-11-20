@@ -15,6 +15,16 @@ import brmallsLogo from "@/assets/clients/brmalls.webp";
 import brookfieldLogo from "@/assets/clients/brookfield.webp";
 import calperLogo from "@/assets/clients/calper.webp";
 import camargoLogo from "@/assets/clients/camargo-correa.webp";
+import casaMoedaLogo from "@/assets/clients/casa-da-moeda.webp";
+import casaSaudeLogo from "@/assets/clients/casa-de-saude-sao-jose.webp";
+import fibraLogo from "@/assets/clients/fibra-experts.webp";
+import firjanLogo from "@/assets/clients/firjan.webp";
+import frmLogo from "@/assets/clients/frm.webp";
+import gamaroLogo from "@/assets/clients/gamaro.webp";
+import helborLogo from "@/assets/clients/helbor.webp";
+import ittenLogo from "@/assets/clients/itten.webp";
+import marriotLogo from "@/assets/clients/marriot.webp";
+import metroLogo from "@/assets/clients/metrorj.webp";
 
 const clients = [
   { name: "Accor Hotels", logo: accorLogo },
@@ -27,6 +37,16 @@ const clients = [
   { name: "Brookfield", logo: brookfieldLogo },
   { name: "Calper", logo: calperLogo },
   { name: "Camargo Corrêa", logo: camargoLogo },
+  { name: "Casa da Moeda do Brasil", logo: casaMoedaLogo },
+  { name: "Casa de Saúde São José", logo: casaSaudeLogo },
+  { name: "Fibra Experts", logo: fibraLogo },
+  { name: "Firjan", logo: firjanLogo },
+  { name: "Fundação Roberto Marinho", logo: frmLogo },
+  { name: "Gamaro", logo: gamaroLogo },
+  { name: "Helbor", logo: helborLogo },
+  { name: "Itten", logo: ittenLogo },
+  { name: "Marriott", logo: marriotLogo },
+  { name: "Metrô Rio", logo: metroLogo },
 ];
 
 const Clientes = () => {
