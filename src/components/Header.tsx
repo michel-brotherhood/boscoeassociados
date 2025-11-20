@@ -31,14 +31,14 @@ const Header = () => {
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
                 <div>
-                  <div className="text-xs font-semibold">15 99999-9999</div>
+                  <div className="text-xs font-semibold">(21) 2620-7330</div>
                   <div className="text-[10px] opacity-75">Fale Conosco</div>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
                 <div>
-                  <div className="text-xs font-semibold">contato@wpengenharia.com.br</div>
+                  <div className="text-xs font-semibold">bassociados@bassociados.com</div>
                   <div className="text-[10px] opacity-75">Fale Conosco</div>
                 </div>
               </div>
@@ -74,13 +74,13 @@ const Header = () => {
             </ul>
 
             <div className="flex items-center gap-3 ml-auto">
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a href="https://www.facebook.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a href="https://www.instagram.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a href="https://wa.me/5521993698629" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <FaWhatsapp className="h-4 w-4" />
               </a>
             </div>
