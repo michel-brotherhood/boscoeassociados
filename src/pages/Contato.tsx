@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,6 +12,7 @@ import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { MenuProvider } from "@/contexts/MenuContext";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
@@ -62,7 +64,8 @@ const Contato = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <MenuProvider>
+      <div className="min-h-screen bg-background">
       <Header />
       <PageHero 
         title="Contato"
@@ -238,7 +241,9 @@ const Contato = () => {
         <CTA />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
+    </MenuProvider>
   );
 };
 
