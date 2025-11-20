@@ -91,13 +91,13 @@ const Header = () => {
 
       {/* Mobile fullscreen menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black z-40 flex flex-col">
-          <div className="flex justify-center pt-8 pb-6">
+        <div className="md:hidden fixed inset-0 bg-black z-40 flex flex-col overflow-hidden">
+          <div className="flex justify-center pt-8 pb-6 px-4">
             <img src={logo} alt="Bosco & Associados" className="h-16 w-auto" />
           </div>
           
-          <nav className="flex-1 flex flex-col justify-center">
-            <ul className="flex flex-col items-center space-y-8">
+          <nav className="flex-1 flex flex-col justify-center overflow-y-auto">
+            <ul className="flex flex-col items-center space-y-8 px-4">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <Link
@@ -112,7 +112,7 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="pb-12 px-8">
+          <div className="pb-8 px-6">
             <Button 
               variant="3d"
               size="lg" 
