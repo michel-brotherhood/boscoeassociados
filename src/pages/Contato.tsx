@@ -124,7 +124,7 @@ const Contato = () => {
               </div>
 
               {/* Contact Form */}
-              <div className="lg:col-span-2 bg-muted/30 p-8 rounded-lg">
+              <div className="lg:col-span-2 bg-card border border-border p-8 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold mb-2">Envie sua Mensagem</h2>
                 <p className="text-muted-foreground mb-6">Preencha o formulário abaixo e entraremos em contato em breve.</p>
                 
@@ -133,7 +133,7 @@ const Contato = () => {
                     <Input
                       placeholder="Seu Nome *"
                       {...register("name")}
-                      className="bg-background"
+                      className="bg-background border-input"
                     />
                     {errors.name && (
                       <p className="text-destructive text-sm mt-1">{errors.name.message}</p>
@@ -146,7 +146,7 @@ const Contato = () => {
                         type="email"
                         placeholder="Seu Email *"
                         {...register("email")}
-                        className="bg-background"
+                        className="bg-background border-input"
                       />
                       {errors.email && (
                         <p className="text-destructive text-sm mt-1">{errors.email.message}</p>
@@ -158,7 +158,7 @@ const Contato = () => {
                         type="tel"
                         placeholder="Seu Telefone *"
                         {...register("phone")}
-                        className="bg-background"
+                        className="bg-background border-input"
                       />
                       {errors.phone && (
                         <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>
@@ -170,7 +170,7 @@ const Contato = () => {
                     <Input
                       placeholder="Assunto *"
                       {...register("subject")}
-                      className="bg-background"
+                      className="bg-background border-input"
                     />
                     {errors.subject && (
                       <p className="text-destructive text-sm mt-1">{errors.subject.message}</p>
@@ -182,7 +182,7 @@ const Contato = () => {
                       placeholder="Sua Mensagem *"
                       rows={6}
                       {...register("message")}
-                      className="bg-background resize-none"
+                      className="bg-background border-input resize-none"
                     />
                     {errors.message && (
                       <p className="text-destructive text-sm mt-1">{errors.message.message}</p>
@@ -222,7 +222,7 @@ const Contato = () => {
               <h2 className="text-3xl font-bold text-center mb-8">Nossa Localização</h2>
               <div className="rounded-lg overflow-hidden shadow-lg h-[450px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.1234567890!2d-43.1234567890!3d-22.8987654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUzJzU1LjYiUyA0M8KwMDcnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr&q=Avenida+Ernani+do+Amaral+Peixoto,+96+Sala+904,+Centro,+Niterói,+RJ"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.414892767948!2d-43.10861912425584!3d-22.904464337709817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f7e3f4f2f5f%3A0x5f5f5f5f5f5f5f5f!2sAv.%20Ernani%20do%20Amaral%20Peixoto%2C%2096%20-%20Centro%2C%20Niter%C3%B3i%20-%20RJ%2C%2024020-074!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
