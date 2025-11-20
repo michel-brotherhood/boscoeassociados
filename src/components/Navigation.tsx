@@ -1,31 +1,27 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Facebook, Instagram } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "DITEC", href: "#ditec" },
-    { label: "SERVIÇOS", href: "#servicos" },
-    { label: "CLIENTES", href: "#clientes" },
-    { label: "ÁREAS DE ATUAÇÃO", href: "#areas" },
-    { label: "NEWS", href: "#news" },
-    { label: "PORTFOLIO", href: "#portfolio" },
-    { label: "PARCEIROS", href: "#parceiros" },
-    { label: "CONTATO", href: "#contato" },
+    { label: "Home", href: "#home" },
+    { label: "Sobre", href: "#sobre" },
+    { label: "Serviços", href: "#servicos" },
+    { label: "Contato", href: "#contato" },
   ];
 
   return (
     <nav className="bg-primary text-primary-foreground sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-14">
-          {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center space-x-1 w-full justify-between">
+        <div className="flex items-center justify-between h-12">
+          <ul className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="px-4 py-4 hover:bg-primary/90 transition-colors text-sm font-medium inline-block"
+                  className="hover:opacity-80 transition-opacity text-sm font-medium"
                 >
                   {item.label}
                 </a>
@@ -33,19 +29,29 @@ const Navigation = () => {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <FaWhatsapp className="h-5 w-5" />
+            </a>
+          </div>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2"
+            className="md:hidden p-2"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <ul className="lg:hidden pb-4 space-y-2">
+          <ul className="md:hidden pb-4 space-y-2">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a

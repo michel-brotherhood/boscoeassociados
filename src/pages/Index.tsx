@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Highlights from "@/components/Highlights";
+import Features from "@/components/Features";
 import About from "@/components/About";
-import SocialMedia from "@/components/SocialMedia";
-import Contact from "@/components/Contact";
+import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
+import Clients from "@/components/Clients";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,11 +15,12 @@ const Index = () => {
       <Header />
       <Navigation />
       <Hero />
-      <Services />
-      <Highlights />
+      <Features />
       <About />
-      <SocialMedia />
-      <Contact />
+      <Services />
+      <Testimonials />
+      <Clients />
+      <CTA />
       <Footer />
     </div>
   );
