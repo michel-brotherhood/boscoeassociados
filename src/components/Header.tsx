@@ -1,14 +1,17 @@
 import { Phone, Mail, Facebook, Instagram, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo-bosco.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Início", href: "#home" },
     { label: "Sobre", href: "#sobre" },
     { label: "Serviços", href: "#servicos" },
+    { label: "Portfólio", href: "#portfolio" },
     { label: "Contato", href: "#contato" },
   ];
 
@@ -19,13 +22,7 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
-                <span className="text-white font-bold text-lg">WP</span>
-              </div>
-              <div>
-                <div className="text-sm font-bold leading-tight">WP ENGENHARIA</div>
-                <div className="text-[10px] opacity-75 leading-tight uppercase">Construindo o Futuro</div>
-              </div>
+              <img src={logo} alt="Bosco & Associados" className="h-12 w-auto" />
             </div>
 
             {/* Desktop contact info */}
@@ -92,14 +89,18 @@ const Header = () => {
 
       {/* Mobile fullscreen menu */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center">
-          <nav className="w-full">
+        <div className="md:hidden fixed inset-0 bg-black z-40 flex flex-col">
+          <div className="flex justify-center pt-8 pb-6">
+            <img src={logo} alt="Bosco & Associados" className="h-16 w-auto" />
+          </div>
+          
+          <nav className="flex-1 flex flex-col justify-center">
             <ul className="flex flex-col items-center space-y-8">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-white text-xl font-medium hover:text-primary transition-colors"
+                    className="text-white text-xl font-medium hover:text-secondary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
@@ -107,19 +108,20 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-
-            <div className="flex items-center justify-center gap-6 mt-12">
-              <a href="#" className="text-white hover:text-primary transition-colors">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-white hover:text-primary transition-colors">
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-white hover:text-primary transition-colors">
-                <FaWhatsapp className="h-6 w-6" />
-              </a>
-            </div>
           </nav>
+
+          <div className="pb-12 px-8">
+            <Button 
+              size="lg" 
+              className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-base py-6"
+              onClick={() => {
+                setIsOpen(false);
+                window.location.href = '#contato';
+              }}
+            >
+              SOLICITAR ORÇAMENTO
+            </Button>
+          </div>
         </div>
       )}
     </header>
