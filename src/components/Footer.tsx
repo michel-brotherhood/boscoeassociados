@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import logo from "@/assets/logo-bosco-white.svg";
 
 const Footer = () => {
   return (
@@ -7,15 +8,11 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-6">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm">WP</span>
-              </div>
-              <div className="text-base font-bold">WP ENGENHARIA</div>
+            <div className="mb-3">
+              <img src={logo} alt="Bosco & Associados" className="h-16 w-auto" />
             </div>
             <p className="text-xs opacity-75 leading-relaxed mb-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut purus non, 
-              lacinia vel, luctus eget, aliquet nec.
+              Engenharia de excelência com soluções inovadoras para seus projetos.
             </p>
             <div className="flex gap-2">
               <a href="#" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
@@ -68,7 +65,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-4 text-center text-[10px] opacity-75">
-          <p>WP Engenharia, Copyright © 2024 – Todos os Direitos Reservados.</p>
+          <p>Bosco & Associados LTDA, Copyright © 2024 – Todos os Direitos Reservados.</p>
         </div>
       </div>
     </footer>

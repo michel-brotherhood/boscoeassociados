@@ -2,7 +2,7 @@ import { Phone, Mail, Facebook, Instagram, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-bosco.png";
+import logo from "@/assets/logo-bosco-white.svg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
