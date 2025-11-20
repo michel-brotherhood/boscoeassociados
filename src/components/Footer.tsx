@@ -15,13 +15,13 @@ const Footer = () => {
               Engenharia de excelência com soluções inovadoras para seus projetos.
             </p>
             <div className="flex gap-2">
-              <a href="#" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://www.facebook.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
                 <Facebook className="h-3 w-3" />
               </a>
-              <a href="#" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://www.instagram.com/boscoassociados" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
                 <Instagram className="h-3 w-3" />
               </a>
-              <a href="#" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://wa.me/5521993698629" target="_blank" rel="noopener noreferrer" className="w-7 h-7 bg-primary rounded flex items-center justify-center hover:opacity-80 transition-opacity">
                 <FaWhatsapp className="h-3 w-3" />
               </a>
             </div>
@@ -32,15 +32,19 @@ const Footer = () => {
             <div className="space-y-2 text-xs opacity-75">
               <div className="flex items-start gap-2">
                 <Phone className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                <span>15 99999-9999</span>
+                <div className="space-y-0.5">
+                  <div>(21) 2620-7330</div>
+                  <div>(21) 2625-4499</div>
+                  <div>(21) 99369-8629</div>
+                </div>
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                <span>contato@wpengenharia.com.br</span>
+                <span>bassociados@bassociados.com</span>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                <span>Rua A, 123 B</span>
+                <span>Av. Ernani do Amaral Peixoto, 96 Sala 904<br/>Centro - Niterói - RJ<br/>CEP.: 24020-074</span>
               </div>
             </div>
           </div>
@@ -58,8 +62,16 @@ const Footer = () => {
 
           <div>
             <h4 className="font-bold mb-3 text-xs">Localização</h4>
-            <div className="bg-muted rounded h-32 flex items-center justify-center text-muted-foreground">
-              <MapPin className="h-6 w-6" />
+            <div className="rounded h-32 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.1234567890!2d-43.1234567890!3d-22.8987654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUzJzU1LjYiUyA0M8KwMDcnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr&q=Avenida+Ernani+do+Amaral+Peixoto,+96+Sala+904,+Centro,+Niterói,+RJ"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
