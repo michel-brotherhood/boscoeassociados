@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
 import Clients from "@/components/Clients";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -21,6 +22,7 @@ const Index = () => {
       <Portfolio />
       <Testimonials />
       <Clients />
+      <FAQ />
       <CTA />
       <Footer />
       <WhatsAppButton />
