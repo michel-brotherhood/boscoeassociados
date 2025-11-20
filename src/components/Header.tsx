@@ -3,16 +3,17 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-bosco-white.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Início", href: "#home" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Portfólio", href: "#portfolio" },
-    { label: "Contato", href: "#contato" },
+    { label: "Início", to: "/" },
+    { label: "Sobre", to: "/sobre" },
+    { label: "Serviços", to: "/servicos" },
+    { label: "Portfólio", to: "/portfolio" },
+    { label: "Contato", to: "/contato" },
   ];
 
   return (
@@ -62,17 +63,12 @@ const Header = () => {
             <ul className="flex items-center space-x-6">
               {navItems.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.to}
                     className="hover:opacity-80 transition-opacity text-sm font-semibold"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const element = document.querySelector(item.href);
-                      element?.scrollIntoView({ behavior: 'smooth' });
-                    }}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -103,20 +99,13 @@ const Header = () => {
             <ul className="flex flex-col items-center space-y-8">
               {navItems.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.to}
                     className="text-white text-xl font-medium hover:text-secondary transition-colors"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsOpen(false);
-                      setTimeout(() => {
-                        const element = document.querySelector(item.href);
-                        element?.scrollIntoView({ behavior: 'smooth' });
-                      }, 300);
-                    }}
+                    onClick={() => setIsOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
