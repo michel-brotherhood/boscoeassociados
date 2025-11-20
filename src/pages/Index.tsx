@@ -13,12 +13,13 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LoadingScreen from "@/components/LoadingScreen";
 import QualityControl from "@/components/QualityControl";
+import { MenuProvider } from "@/contexts/MenuContext";
 
 const Index = () => {
   const [showLoading, setShowLoading] = useState(true);
 
   return (
-    <>
+    <MenuProvider>
       {showLoading && <LoadingScreen onComplete={() => setShowLoading(false)} />}
       <div className="min-h-screen">
         <Header />
@@ -35,7 +36,7 @@ const Index = () => {
         <Footer />
         <WhatsAppButton />
       </div>
-    </>
+    </MenuProvider>
   );
 };
 

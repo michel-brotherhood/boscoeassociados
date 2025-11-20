@@ -3,23 +3,28 @@ import PageHero from "@/components/PageHero";
 import About from "@/components/About";
 import QualityControl from "@/components/QualityControl";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { MenuProvider } from "@/contexts/MenuContext";
 
 const Sobre = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <PageHero 
-        title="Sobre Nós"
-        breadcrumbs={[
-          { label: "Início", path: "/" }
-        ]}
-      />
-      <main className="py-12">
-        <About />
-        <QualityControl />
-      </main>
-      <Footer />
-    </div>
+    <MenuProvider>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <PageHero 
+          title="Sobre Nós"
+          breadcrumbs={[
+            { label: "Início", path: "/" }
+          ]}
+        />
+        <main className="py-12">
+          <About />
+          <QualityControl />
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </MenuProvider>
   );
 };
 

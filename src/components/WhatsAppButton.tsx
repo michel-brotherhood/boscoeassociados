@@ -1,9 +1,14 @@
 import { FaWhatsapp } from "react-icons/fa";
+import { useMenu } from "@/contexts/MenuContext";
 
 const WhatsAppButton = () => {
+  const { isMenuOpen } = useMenu();
+
   const handleClick = () => {
-    window.open("https://wa.me/5515999999999", "_blank");
+    window.open("https://wa.me/5521993698629", "_blank");
   };
+
+  if (isMenuOpen) return null;
 
   return (
     <button

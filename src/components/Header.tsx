@@ -1,12 +1,12 @@
 import { Phone, Mail, Facebook, Instagram, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-bosco-white.svg";
 import { Link } from "react-router-dom";
+import { useMenu } from "@/contexts/MenuContext";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
 
   const navItems = [
     { label: "Início", to: "/" },
@@ -47,11 +47,11 @@ const Header = () => {
 
             {/* Mobile menu button */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 z-50 relative"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -90,7 +90,7 @@ const Header = () => {
       </nav>
 
       {/* Mobile fullscreen menu */}
-      {isOpen && (
+      {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-black z-40 flex flex-col">
           <div className="flex justify-center pt-8 pb-6">
             <img src={logo} alt="Bosco & Associados" className="h-16 w-auto" />
@@ -102,8 +102,8 @@ const Header = () => {
                 <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="text-white text-xl font-medium hover:text-secondary transition-colors"
-                    onClick={() => setIsOpen(false)}
+                    className="text-white text-xl font-medium hover:text-primary transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
@@ -118,7 +118,7 @@ const Header = () => {
               size="lg" 
               className="w-full font-bold text-base py-6"
               onClick={() => {
-                setIsOpen(false);
+                setIsMenuOpen(false);
                 window.location.href = '#contato';
               }}
             >
