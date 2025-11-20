@@ -7,19 +7,19 @@ const clients = [
 
 const Clients = () => {
   return (
-    <section className="py-12 bg-secondary text-secondary-foreground">
+    <section className="py-10 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4">
-        <h3 className="text-xl font-semibold mb-8 text-center">
+        <h3 className="text-base font-normal mb-6 text-left">
           Empresas que já passaram por aqui:
         </h3>
-        <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
+        <div className="flex flex-wrap justify-start items-center gap-12 opacity-50">
           {clients.map((client, index) => (
-            <div key={index} className="text-white text-lg font-bold">
+            <div key={index} className="text-white text-base font-semibold">
               {client.name}
             </div>
           ))}
         </div>
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2 mt-6">
           {[...Array(6)].map((_, index) => (
             <button
               key={index}

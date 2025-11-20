@@ -15,8 +15,8 @@ const About = () => {
           </div>
 
           <div>
-            <p className="text-primary text-sm font-semibold mb-2 uppercase">Um Pouco</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            <p className="text-primary text-xs font-semibold mb-1 uppercase tracking-wide">Um Pouco</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
               Sobre a Empresa
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">

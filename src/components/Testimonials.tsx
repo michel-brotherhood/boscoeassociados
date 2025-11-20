@@ -31,28 +31,28 @@ const Testimonials = () => {
     <section className="py-16 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4">
         <div className="mb-8">
-          <p className="text-primary text-sm font-semibold mb-2 uppercase">O que estão</p>
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <p className="text-primary text-xs font-semibold mb-1 uppercase tracking-wide">O que estão</p>
+          <h2 className="text-2xl md:text-3xl font-bold">
             Dizendo Sobre Nós
           </h2>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="relative max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-secondary-foreground/5 p-8 rounded">
-                <p className="text-lg mb-6 leading-relaxed opacity-90">
+              <div key={index} className="bg-secondary-foreground/5 p-6 rounded">
+                <p className="text-sm mb-6 leading-relaxed opacity-90">
                   {testimonial.text}
                 </p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-10 h-10 rounded-full object-cover"
                   />
                   <div>
-                    <div className="font-bold">{testimonial.name}</div>
-                    <div className="text-sm opacity-75">{testimonial.role}</div>
+                    <div className="font-bold text-sm">{testimonial.name}</div>
+                    <div className="text-xs opacity-75">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
