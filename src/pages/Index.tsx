@@ -12,6 +12,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LoadingScreen from "@/components/LoadingScreen";
+import QualityControl from "@/components/QualityControl";
 
 const Index = () => {
   const [showLoading, setShowLoading] = useState(true);
@@ -24,6 +25,7 @@ const Index = () => {
         <Hero />
         <Features />
         <About />
+        <QualityControl />
         <Services />
         <Portfolio />
         <Testimonials />

@@ -61,7 +61,7 @@ const Features = () => {
                 <div 
                   key={index} 
                   className={`text-center p-6 md:p-8 transition-all duration-700 relative ${
-                    !isLast ? "lg:border-r border-border/30" : ""
+                    !isLast ? "lg:border-r border-border/60" : ""
                   } ${
                     isVisible 
                       ? 'opacity-100 translate-y-0' 
