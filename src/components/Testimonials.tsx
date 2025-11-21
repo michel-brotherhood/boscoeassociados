@@ -1,4 +1,4 @@
-import { TestimonialsSection } from "./ui/testimonials-with-marquee";
+import { TestimonialCard } from "./ui/testimonial-card";
 
 const testimonials = [
   {
@@ -69,12 +69,36 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <TestimonialsSection
-      title="Dizendo Sobre Nós"
-      description="Veja o que nossos clientes têm a dizer sobre nossos serviços"
-      testimonials={testimonials}
-      className="bg-[#1b1b1a]"
-    />
+    <div className="bg-[#1b1b1a] py-12 sm:py-24 md:py-32">
+      <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
+        <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
+          <p className="text-primary text-xs md:text-sm font-semibold mb-1 uppercase tracking-wide">
+            O que estão
+          </p>
+          <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight text-foreground">
+            Dizendo Sobre Nós
+          </h2>
+          <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
+            Veja o que nossos clientes têm a dizer sobre nossos serviços
+          </p>
+        </div>
+
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:80s]">
+            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+              {[...Array(4)].map((_, setIndex) => (
+                testimonials.map((testimonial, i) => (
+                  <TestimonialCard 
+                    key={`${setIndex}-${i}`}
+                    {...testimonial}
+                  />
+                ))
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
