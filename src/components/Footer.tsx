@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 import { FaGoogle } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-bosco-white.svg";
 
 const Footer = () => {
@@ -49,10 +50,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-3 text-xs">Links Úteis</h4>
             <ul className="space-y-1.5 text-xs opacity-75">
-              <li><a href="/" className="hover:text-primary transition-colors">Início</a></li>
-              <li><a href="/sobre" className="hover:text-primary transition-colors">Sobre</a></li>
-              <li><a href="/servicos" className="hover:text-primary transition-colors">Atuação</a></li>
-              <li><a href="/contato" className="hover:text-primary transition-colors">Contato</a></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Início</Link></li>
+              <li><Link to="/sobre" className="hover:text-primary transition-colors">Sobre</Link></li>
+              <li><Link to="/servicos" className="hover:text-primary transition-colors">Atuação</Link></li>
+              <li><Link to="/contato" className="hover:text-primary transition-colors">Contato</Link></li>
             </ul>
           </div>
 
