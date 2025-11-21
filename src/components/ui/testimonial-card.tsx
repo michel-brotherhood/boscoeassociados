@@ -29,7 +29,8 @@ export function TestimonialCard({
         "flex flex-col rounded-lg border border-white/10",
         "bg-gradient-to-b from-white/5 to-white/[0.02]",
         "p-4 text-start sm:p-6",
-        "hover:from-white/10 hover:to-white/5 hover:border-white/20",
+        "hover:from-white/10 hover:to-white/5 hover:border-primary/40",
+        "hover:shadow-[0_0_20px_rgba(196,30,58,0.3)]",
         "max-w-[320px] sm:max-w-[320px]",
         "transition-all duration-300",
         className

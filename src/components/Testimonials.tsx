@@ -75,16 +75,16 @@ const Testimonials = () => {
           <p className="text-primary text-xs md:text-sm font-semibold mb-1 uppercase tracking-wide">
             O que estão
           </p>
-          <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight text-foreground">
+          <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight text-white">
             Dizendo Sobre Nós
           </h2>
-          <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
+          <p className="text-md max-w-[600px] font-medium text-white/70 sm:text-xl">
             Veja o que nossos clientes têm a dizer sobre nossos serviços
           </p>
         </div>
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:80s]">
+          <div className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row [--duration:80s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
               {[...Array(4)].map((_, setIndex) => (
                 testimonials.map((testimonial, i) => (
