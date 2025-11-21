@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { Users, Network, Monitor, Phone, Wifi, Flame, Video, Volume2, ClipboardCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import consultoriaTecnica from "@/assets/services/consultoria-tecnica.webp";
 import cabeamentoEstruturado from "@/assets/services/cabeamento-estruturado.webp";
 import supervisaoControle from "@/assets/services/supervisao-controle.webp";
@@ -18,6 +19,7 @@ const services = [
     icon: Users,
     image: consultoriaTecnica,
     category: "consultoria",
+    slug: "consultoria-tecnica",
   },
   {
     title: "Redes de Cabeamento Estruturado",
@@ -25,6 +27,7 @@ const services = [
     icon: Network,
     image: cabeamentoEstruturado,
     category: "industrial",
+    slug: "cabeamento-estruturado",
   },
   {
     title: "Supervisão e Controle Predial",
@@ -32,6 +35,7 @@ const services = [
     icon: Monitor,
     image: supervisaoControle,
     category: "predial",
+    slug: "supervisao-controle",
   },
   {
     title: "Instalações Telefônicas",
@@ -39,6 +43,7 @@ const services = [
     icon: Phone,
     image: instalacoesTelefonicas,
     category: "industrial",
+    slug: "instalacoes-telefonicas",
   },
   {
     title: "Redes Lógicas Locais",
@@ -46,6 +51,7 @@ const services = [
     icon: Wifi,
     image: redesLogicas,
     category: "industrial",
+    slug: "redes-logicas",
   },
   {
     title: "Detecção e Alarme de Incêndio",
@@ -53,6 +59,7 @@ const services = [
     icon: Flame,
     image: alarmeIncendio,
     category: "predial",
+    slug: "alarme-incendio",
   },
   {
     title: "Circuito Fechado de TV",
@@ -60,6 +67,7 @@ const services = [
     icon: Video,
     image: cftv,
     category: "predial",
+    slug: "cftv",
   },
   {
     title: "Sonorização Ambiente",
@@ -67,6 +75,7 @@ const services = [
     icon: Volume2,
     image: sonorizacao,
     category: "predial",
+    slug: "sonorizacao",
   },
   {
     title: "Gerenciamento e Fiscalização",
@@ -74,6 +83,7 @@ const services = [
     icon: ClipboardCheck,
     image: gerenciamento,
     category: "consultoria",
+    slug: "gerenciamento",
   },
 ];
 
@@ -201,8 +211,11 @@ const Services = () => {
                     <Button 
                       variant="ghost" 
                       className="text-primary hover:text-primary font-semibold text-xs md:text-sm p-0 h-auto hover:bg-transparent group-hover:translate-x-2 transition-transform duration-300"
+                      asChild
                     >
-                      Saiba Mais →
+                      <Link to={`/servicos/${service.slug}`}>
+                        Saiba Mais →
+                      </Link>
                     </Button>
                   </div>
                 </div>
