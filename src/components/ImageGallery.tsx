@@ -18,6 +18,15 @@ interface ImageGalleryProps {
 const ImageGallery = ({ images, projectTitle }: ImageGalleryProps) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>, imageUrl: string) => {
+    console.error(`❌ Failed to load image: ${imageUrl}`);
+    e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23f0f0f0" width="400" height="300"/%3E%3Ctext fill="%23666" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-family="Arial" font-size="16"%3EImagem não disponível%3C/text%3E%3C/svg%3E';
+  };
+
+  const handleImageLoad = (imageUrl: string) => {
+    console.log(`✅ Loaded image: ${imageUrl}`);
+  };
+
   const openLightbox = (index: number) => {
     setSelectedImageIndex(index);
   };
@@ -63,9 +72,12 @@ const ImageGallery = ({ images, projectTitle }: ImageGalleryProps) => {
             onClick={() => openLightbox(index)}
           >
             <img
-              src={image.image_url}
+              src={`${image.image_url}?v=2`}
               alt={`${projectTitle} - Imagem ${index + 1}`}
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              onError={(e) => handleImageError(e, image.image_url)}
+              onLoad={() => handleImageLoad(image.image_url)}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-4 left-4 right-4">
@@ -119,9 +131,11 @@ const ImageGallery = ({ images, projectTitle }: ImageGalleryProps) => {
             {selectedImageIndex !== null && (
               <div className="w-full h-full flex flex-col items-center justify-center p-4">
                 <img
-                  src={images[selectedImageIndex].image_url}
+                  src={`${images[selectedImageIndex].image_url}?v=2`}
                   alt={`${projectTitle} - Imagem ${selectedImageIndex + 1}`}
                   className="max-w-full max-h-[85vh] object-contain"
+                  onError={(e) => handleImageError(e, images[selectedImageIndex].image_url)}
+                  onLoad={() => handleImageLoad(images[selectedImageIndex].image_url)}
                 />
                 {images[selectedImageIndex].caption && (
                   <p className="text-white text-center mt-4 max-w-2xl">
