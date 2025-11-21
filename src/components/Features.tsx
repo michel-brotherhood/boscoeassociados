@@ -60,21 +60,31 @@ const Features = () => {
               return (
                 <div 
                   key={index} 
-                  className={`text-center p-6 md:p-8 transition-all duration-700 relative ${
-                    !isLast ? "lg:border-r border-border/60" : ""
-                  } ${
-                    isVisible 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-10'
-                  }`}
-                  style={{ transitionDelay: `${index * 150}ms` }}
+                  className={`group text-center p-6 md:p-8 transition-all duration-700 relative
+                    hover:scale-105 hover:-translate-y-2 hover:shadow-2xl
+                    hover:bg-gradient-to-br hover:from-white hover:to-red-50/30
+                    rounded-lg
+                    ${!isLast ? "lg:border-r border-border/60" : ""} 
+                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  style={{ 
+                    transitionDelay: `${index * 150}ms`,
+                    animation: isVisible ? `fadeInScale 0.6s ease-out forwards ${index * 150}ms` : 'none'
+                  }}
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 mb-4">
-                    <Icon className="w-8 h-8 md:w-10 md:h-10 text-primary" strokeWidth={1.5} />
+                  {/* Animated border on hover */}
+                  <div className="absolute inset-0 border-2 border-primary rounded-lg scale-0 group-hover:scale-100 transition-transform duration-500 opacity-0 group-hover:opacity-20"></div>
+                  
+                  {/* Icon with animation */}
+                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Icon className="w-8 h-8 md:w-10 md:h-10 text-primary group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-base md:text-lg font-bold mb-3 text-foreground">
+                  
+                  {/* Title with gradient on hover */}
+                  <h3 className="text-base md:text-lg font-bold mb-3 text-foreground group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-red-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     {feature.title}
                   </h3>
+                  
+                  {/* Description */}
                   <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-[250px] mx-auto">
                     {feature.description}
                   </p>
