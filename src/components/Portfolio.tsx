@@ -12,7 +12,11 @@ interface Project {
   thumbnail_url: string;
 }
 
-const Portfolio = () => {
+interface PortfolioProps {
+  showAll?: boolean;
+}
+
+const Portfolio = ({ showAll = false }: PortfolioProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const sectionRef = useRef<HTMLElement>(null);
@@ -55,8 +59,11 @@ const Portfolio = () => {
   const categories = ["Todos", ...Array.from(new Set(projects.map(p => p.category)))];
 
   const filteredProjects = selectedCategory === "Todos" 
-    ? projects.slice(0, 6) // Mostrar apenas os 6 primeiros projetos na home
-    : projects.filter(p => p.category === selectedCategory).slice(0, 6);
+    ? (showAll ? projects : projects.slice(0, 6))
+    : (showAll 
+        ? projects.filter(p => p.category === selectedCategory)
+        : projects.filter(p => p.category === selectedCategory).slice(0, 6)
+      );
 
   const handleProjectClick = (project: Project) => {
     navigate(`/portfolio/${project.slug}`);
@@ -149,7 +156,7 @@ const Portfolio = () => {
         )}
 
         {/* Ver Todos Button */}
-        {projects.length > 6 && (
+        {!showAll && projects.length > 6 && (
           <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '900ms' }}>
             <Button
               variant="3d"
