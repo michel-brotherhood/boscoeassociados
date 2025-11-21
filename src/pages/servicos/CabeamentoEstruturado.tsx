@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { MenuProvider } from "@/contexts/MenuContext";
 import { Network, CheckCircle2, Zap, Shield } from "lucide-react";
@@ -9,7 +10,8 @@ import { Network, CheckCircle2, Zap, Shield } from "lucide-react";
 const CabeamentoEstruturado = () => {
   return (
     <MenuProvider>
-      <div className="min-h-screen">
+      <PageTransition>
+        <div className="min-h-screen">
         <Header />
         <PageHero 
           title="Cabeamento Estruturado"
@@ -112,6 +114,7 @@ const CabeamentoEstruturado = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+      </PageTransition>
     </MenuProvider>
   );
 };

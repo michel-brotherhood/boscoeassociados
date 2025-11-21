@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { MenuProvider } from "@/contexts/MenuContext";
 import { Monitor, CheckCircle2, Gauge, Settings } from "lucide-react";
@@ -9,7 +10,8 @@ import { Monitor, CheckCircle2, Gauge, Settings } from "lucide-react";
 const SupervisaoControle = () => {
   return (
     <MenuProvider>
-      <div className="min-h-screen">
+      <PageTransition>
+        <div className="min-h-screen">
         <Header />
         <PageHero 
           title="Supervisão e Controle Predial"
@@ -127,6 +129,7 @@ const SupervisaoControle = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+      </PageTransition>
     </MenuProvider>
   );
 };

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { MenuProvider } from "@/contexts/MenuContext";
 import { Video, CheckCircle2, Eye, Lock } from "lucide-react";
@@ -9,7 +10,8 @@ import { Video, CheckCircle2, Eye, Lock } from "lucide-react";
 const CFTV = () => {
   return (
     <MenuProvider>
-      <div className="min-h-screen">
+      <PageTransition>
+        <div className="min-h-screen">
         <Header />
         <PageHero 
           title="Circuito Fechado de TV"
@@ -145,6 +147,7 @@ const CFTV = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+      </PageTransition>
     </MenuProvider>
   );
 };

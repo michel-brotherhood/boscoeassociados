@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { MenuProvider } from "@/contexts/MenuContext";
 import { Phone, CheckCircle2, Network, Headphones } from "lucide-react";
@@ -9,7 +10,8 @@ import { Phone, CheckCircle2, Network, Headphones } from "lucide-react";
 const InstalacoesTelefonicas = () => {
   return (
     <MenuProvider>
-      <div className="min-h-screen">
+      <PageTransition>
+        <div className="min-h-screen">
         <Header />
         <PageHero 
           title="Instalações Telefônicas"
@@ -127,6 +129,7 @@ const InstalacoesTelefonicas = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+      </PageTransition>
     </MenuProvider>
   );
 };
