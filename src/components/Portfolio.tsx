@@ -55,8 +55,8 @@ const Portfolio = () => {
   const categories = ["Todos", ...Array.from(new Set(projects.map(p => p.category)))];
 
   const filteredProjects = selectedCategory === "Todos" 
-    ? projects 
-    : projects.filter(p => p.category === selectedCategory);
+    ? projects.slice(0, 6) // Mostrar apenas os 6 primeiros projetos na home
+    : projects.filter(p => p.category === selectedCategory).slice(0, 6);
 
   const handleProjectClick = (project: Project) => {
     navigate(`/portfolio/${project.slug}`);
@@ -72,22 +72,22 @@ const Portfolio = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-primary text-sm md:text-base font-semibold mb-2 uppercase tracking-wide">
+          <p className="text-primary text-sm md:text-base font-semibold mb-2 uppercase tracking-wide animate-fade-in">
             Nossos Trabalhos
           </p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground animate-fade-in" style={{ animationDelay: '100ms' }}>
             Portfólio de Projetos
           </h2>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in" style={{ animationDelay: '200ms' }}>
           {categories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "3d" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className="font-semibold text-sm"
+              className="font-semibold text-sm transition-all duration-300 hover:scale-105"
             >
               {category}
             </Button>
@@ -108,19 +108,19 @@ const Portfolio = () => {
               <div
                 key={project.id}
                 onClick={() => handleProjectClick(project)}
-                className={`group relative overflow-hidden rounded-lg shadow-lg bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer ${
+                className={`group relative overflow-hidden rounded-lg shadow-lg bg-white transition-all duration-700 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 cursor-pointer animate-fade-in hover-scale ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                style={{ animationDelay: `${300 + index * 100}ms` }}
               >
                 <div className="relative h-64 md:h-72 overflow-hidden">
                   <img
                     src={project.thumbnail_url}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">Ver Detalhes</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Ver Detalhes</span>
                   </div>
                 </div>
                 
@@ -145,6 +145,20 @@ const Portfolio = () => {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Ver Todos Button */}
+        {projects.length > 6 && (
+          <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '900ms' }}>
+            <Button
+              variant="3d"
+              size="lg"
+              onClick={() => navigate("/portfolio")}
+              className="font-semibold"
+            >
+              Ver Todos os Projetos
+            </Button>
           </div>
         )}
       </div>
