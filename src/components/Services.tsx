@@ -1,61 +1,70 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { Users, Network, Monitor, Phone, Wifi, Flame, Video, Volume2, ClipboardCheck } from "lucide-react";
+import consultoriaTecnica from "@/assets/services/consultoria-tecnica.webp";
+import cabeamentoEstruturado from "@/assets/services/cabeamento-estruturado.webp";
+import supervisaoControle from "@/assets/services/supervisao-controle.webp";
+import instalacoesTelefonicas from "@/assets/services/instalacoes-telefonicas.webp";
+import redesLogicas from "@/assets/services/redes-logicas.webp";
+import alarmeIncendio from "@/assets/services/alarme-incendio.webp";
+import cftv from "@/assets/services/cftv.webp";
+import sonorizacao from "@/assets/services/sonorizacao.webp";
+import gerenciamento from "@/assets/services/gerenciamento.webp";
 
 const services = [
   {
     title: "Consultoria Técnica",
     description: "Consultoria especializada em engenharia e arquitetura para otimização de projetos.",
     icon: Users,
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
+    image: consultoriaTecnica,
   },
   {
     title: "Redes de Cabeamento Estruturado",
     description: "Projetos completos de infraestrutura de cabeamento estruturado.",
     icon: Network,
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop",
+    image: cabeamentoEstruturado,
   },
   {
     title: "Supervisão e Controle Predial",
     description: "Sistemas de supervisão e automação para controle predial integrado.",
     icon: Monitor,
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&h=300&fit=crop",
+    image: supervisaoControle,
   },
   {
     title: "Instalações Telefônicas",
     description: "Projetos de infraestrutura telefônica para ambientes corporativos.",
     icon: Phone,
-    image: "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=500&h=300&fit=crop",
+    image: instalacoesTelefonicas,
   },
   {
     title: "Redes Lógicas Locais",
     description: "Projetos de redes lógicas locais (LAN) para conectividade eficiente.",
     icon: Wifi,
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&h=300&fit=crop",
+    image: redesLogicas,
   },
   {
     title: "Detecção e Alarme de Incêndio",
     description: "Sistemas de detecção e alarme para segurança contra incêndio.",
     icon: Flame,
-    image: "https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?w=500&h=300&fit=crop",
+    image: alarmeIncendio,
   },
   {
     title: "Circuito Fechado de TV",
     description: "Projetos de CFTV para monitoramento e segurança patrimonial.",
     icon: Video,
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&h=300&fit=crop",
+    image: cftv,
   },
   {
     title: "Sonorização Ambiente",
     description: "Sistemas de áudio ambiente para espaços comerciais e corporativos.",
     icon: Volume2,
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=500&h=300&fit=crop",
+    image: sonorizacao,
   },
   {
     title: "Gerenciamento e Fiscalização",
     description: "Gerenciamento completo e fiscalização técnica de obras.",
     icon: ClipboardCheck,
-    image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=500&h=300&fit=crop",
+    image: gerenciamento,
   },
 ];
 
