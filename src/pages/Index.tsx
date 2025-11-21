@@ -29,7 +29,7 @@ const Index = () => {
         <About />
         <QualityControl />
         <Services />
-        <Portfolio />
+        <Portfolio showAll={false} />
         <Testimonials />
         <FAQ />
         <CTA />

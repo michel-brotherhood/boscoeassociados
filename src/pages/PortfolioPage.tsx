@@ -21,7 +21,7 @@ const PortfolioPage = () => {
             backgroundImage={heroPortfolio}
           />
           <main className="py-12">
-            <Portfolio />
+            <Portfolio showAll={true} />
           </main>
           <Footer />
           <WhatsAppButton />
