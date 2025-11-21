@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import aboutImage from "@/assets/about-engineering.jpg";
 import aboutBackground from "@/assets/about-background.webp";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -85,8 +86,9 @@ const About = () => {
             <Button 
               variant="3d"
               className="mt-8 font-bold px-8 py-6 text-sm md:text-base w-fit"
+              asChild
             >
-              SAIBA MAIS
+              <Link to="/sobre">SAIBA MAIS</Link>
             </Button>
           </div>
         </div>
