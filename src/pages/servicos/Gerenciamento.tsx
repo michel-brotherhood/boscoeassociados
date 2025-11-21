@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { MenuProvider } from "@/contexts/MenuContext";
 import { ClipboardCheck, CheckCircle2, FileCheck, UserCheck } from "lucide-react";
@@ -9,7 +10,8 @@ import { ClipboardCheck, CheckCircle2, FileCheck, UserCheck } from "lucide-react
 const Gerenciamento = () => {
   return (
     <MenuProvider>
-      <div className="min-h-screen">
+      <PageTransition>
+        <div className="min-h-screen">
         <Header />
         <PageHero 
           title="Gerenciamento e Fiscalização"
@@ -160,6 +162,7 @@ const Gerenciamento = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+      </PageTransition>
     </MenuProvider>
   );
 };

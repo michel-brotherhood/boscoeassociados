@@ -133,32 +133,32 @@ const Services = () => {
             </p>
             
             {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 mb-4">
               <Button 
                 variant={activeFilter === "all" ? "default" : "outline"}
                 onClick={() => setActiveFilter("all")}
-                className="text-xs transition-all duration-300"
+                className="text-xs sm:text-sm transition-all duration-300 h-9 px-3 sm:px-4"
               >
                 Todos
               </Button>
               <Button 
                 variant={activeFilter === "predial" ? "default" : "outline"}
                 onClick={() => setActiveFilter("predial")}
-                className="text-xs transition-all duration-300"
+                className="text-xs sm:text-sm transition-all duration-300 h-9 px-3 sm:px-4"
               >
                 Predial
               </Button>
               <Button 
                 variant={activeFilter === "industrial" ? "default" : "outline"}
                 onClick={() => setActiveFilter("industrial")}
-                className="text-xs transition-all duration-300"
+                className="text-xs sm:text-sm transition-all duration-300 h-9 px-3 sm:px-4"
               >
                 Industrial
               </Button>
               <Button 
                 variant={activeFilter === "consultoria" ? "default" : "outline"}
                 onClick={() => setActiveFilter("consultoria")}
-                className="text-xs transition-all duration-300"
+                className="text-xs sm:text-sm transition-all duration-300 h-9 px-3 sm:px-4"
               >
                 Consultoria
               </Button>

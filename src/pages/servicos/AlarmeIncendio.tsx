@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHero from "@/components/PageHero";
+import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { MenuProvider } from "@/contexts/MenuContext";
 import { Flame, CheckCircle2, AlertTriangle, Shield } from "lucide-react";
@@ -9,7 +10,8 @@ import { Flame, CheckCircle2, AlertTriangle, Shield } from "lucide-react";
 const AlarmeIncendio = () => {
   return (
     <MenuProvider>
-      <div className="min-h-screen">
+      <PageTransition>
+        <div className="min-h-screen">
         <Header />
         <PageHero 
           title="Detecção e Alarme de Incêndio"
@@ -126,6 +128,7 @@ const AlarmeIncendio = () => {
         <Footer />
         <WhatsAppButton />
       </div>
+      </PageTransition>
     </MenuProvider>
   );
 };

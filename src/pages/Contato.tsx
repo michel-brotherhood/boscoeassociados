@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageTransition from "@/components/PageTransition";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -59,7 +60,8 @@ const Contato = () => {
 
   return (
     <MenuProvider>
-      <div className="min-h-screen bg-background">
+      <PageTransition>
+        <div className="min-h-screen bg-background">
       <Header />
       <PageHero 
         title="Contato"
@@ -300,6 +302,7 @@ const Contato = () => {
       <Footer />
       <WhatsAppButton />
     </div>
+    </PageTransition>
     </MenuProvider>
   );
 };
