@@ -26,7 +26,7 @@ const Hero = () => {
           variant="3d" 
           size="lg" 
           className="font-bold px-6 md:px-8 text-xs md:text-sm relative overflow-hidden group"
-          onClick={() => window.location.href = '#contato'}
+          onClick={() => window.open("https://wa.me/5521993698629", "_blank")}
         >
           <span className="relative z-10">PEÇA O SEU ORÇAMENTO</span>
           <span className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>

@@ -21,7 +21,7 @@ const CTA = () => {
           </p>
           <button 
             className="cta-button"
-            onClick={() => window.location.href = '/contato'}
+            onClick={() => window.open("https://wa.me/5521993698629", "_blank")}
           >
             PEÇA O SEU ORÇAMENTO
           </button>

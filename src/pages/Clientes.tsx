@@ -157,11 +157,12 @@ const Clientes = () => {
                 Entre em contato conosco e descubra como podemos transformar seu projeto em realidade 
                 com soluções inovadoras e personalizadas.
               </p>
-              <a href="/contato">
-                <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-3 rounded-lg transition-colors">
-                  SOLICITAR ORÇAMENTO
-                </button>
-              </a>
+              <button 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-3 rounded-lg transition-colors"
+                onClick={() => window.open("https://wa.me/5521993698629", "_blank")}
+              >
+                SOLICITAR ORÇAMENTO
+              </button>
             </div>
           </div>
         </section>
