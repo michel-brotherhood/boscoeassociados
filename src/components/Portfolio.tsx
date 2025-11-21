@@ -128,9 +128,20 @@ const Portfolio = () => {
                   <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-primary rounded-full mb-3">
                     {project.category}
                   </span>
-                  <h3 className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-4">
                     {project.title}
                   </h3>
+                  <Button
+                    variant="3d"
+                    size="sm"
+                    className="w-full"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleProjectClick(project);
+                    }}
+                  >
+                    Saiba Mais
+                  </Button>
                 </div>
               </div>
             ))}
