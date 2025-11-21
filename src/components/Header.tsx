@@ -119,7 +119,7 @@ const Header = () => {
               className="w-full font-bold text-base py-6"
               onClick={() => {
                 setIsMenuOpen(false);
-                window.location.href = '#contato';
+                window.open("https://wa.me/5521993698629", "_blank");
               }}
             >
               SOLICITAR ORÇAMENTO
