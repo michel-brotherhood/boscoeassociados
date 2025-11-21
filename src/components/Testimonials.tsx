@@ -1,5 +1,4 @@
 import { TestimonialCard } from "./ui/testimonial-card";
-import { useRef, useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -69,37 +68,6 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [animationSpeed, setAnimationSpeed] = useState(120);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
-      
-      const rect = containerRef.current.getBoundingClientRect();
-      const mouseY = e.clientY;
-      const containerTop = rect.top;
-      const containerBottom = rect.bottom;
-      const containerCenter = (containerTop + containerBottom) / 2;
-      
-      // Calcular distância do mouse ao centro do carrossel
-      const distance = Math.abs(mouseY - containerCenter);
-      const maxDistance = 300; // pixels de alcance
-      
-      if (mouseY > containerTop - maxDistance && mouseY < containerBottom + maxDistance) {
-        // Quanto mais próximo, mais lento (de 120s até 180s)
-        const proximity = Math.max(0, 1 - distance / maxDistance);
-        const newSpeed = 120 + (proximity * 60); // 120s a 180s
-        setAnimationSpeed(newSpeed);
-      } else {
-        setAnimationSpeed(120);
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <div className="bg-[#1b1b1a] py-12 sm:py-24 md:py-32">
       <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
@@ -115,14 +83,8 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div 
-          ref={containerRef}
-          className="relative flex w-full flex-col items-center justify-center overflow-hidden"
-        >
-          <div 
-            className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row"
-            style={{ '--duration': `${animationSpeed}s` } as React.CSSProperties}
-          >
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <div className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row [--duration:120s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
               {[...Array(4)].map((_, setIndex) => (
                 testimonials.map((testimonial, i) => (
