@@ -5,22 +5,22 @@ const features = [
   {
     icon: Headset,
     title: "Atendimento Personalizado",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    description: "Equipe dedicada para entender suas necessidades e oferecer soluções customizadas em sistemas eletrônicos para seu projeto predial ou industrial.",
   },
   {
     icon: Users,
     title: "Profissionais Qualificados",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    description: "Consultores, Engenheiros, Arquitetos e Técnicos especializados, altamente treinados e preparados para projetos de alta complexidade.",
   },
   {
     icon: Cog,
     title: "Tecnologia de Ponta",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    description: "Utilizamos as mais modernas tecnologias em cabeamento estruturado, CFTV, alarme de incêndio, sonorização e controle predial.",
   },
   {
     icon: TrendingUp,
     title: "Resultados Comprovados",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    description: "22 anos de experiência com portfólio consolidado em projetos nacionais e internacionais nas áreas predial e industrial.",
   },
 ];
 
