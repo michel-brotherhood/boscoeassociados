@@ -224,7 +224,7 @@ const ProjectDetailPage = () => {
                     onClick={() => navigate("/portfolio")}
                     variant="outline"
                     size="lg"
-                    className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10 hover:border-white"
+                    className="text-lg px-8 py-6 border-2 border-white text-white hover:bg-white hover:text-secondary transition-all duration-300"
                   >
                     Ver Mais Projetos
                   </Button>
