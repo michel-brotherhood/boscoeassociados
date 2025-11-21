@@ -69,6 +69,24 @@ const Portfolio = ({ showAll = false }: PortfolioProps) => {
     navigate(`/portfolio/${project.slug}`);
   };
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>, project: Project) => {
+    console.error(`❌ Failed to load image for project: ${project.title}`);
+    console.error(`   URL: ${project.thumbnail_url}`);
+    e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23f0f0f0" width="400" height="300"/%3E%3Ctext fill="%23666" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-family="Arial" font-size="16"%3EImagem não disponível%3C/text%3E%3C/svg%3E';
+  };
+
+  const handleImageLoad = (project: Project) => {
+    console.log(`✅ Loaded image for project: ${project.title}`);
+  };
+
+  // Debug: Log all projects being rendered
+  if (filteredProjects.length > 0) {
+    console.log(`📊 Rendering ${filteredProjects.length} projects in Portfolio section`);
+    filteredProjects.forEach((p, idx) => {
+      console.log(`   ${idx + 1}. ${p.title} → ${p.thumbnail_url}`);
+    });
+  }
+
   return (
     <section 
       id="portfolio" 
@@ -120,11 +138,14 @@ const Portfolio = ({ showAll = false }: PortfolioProps) => {
                 }`}
                 style={{ animationDelay: `${300 + index * 100}ms` }}
               >
-                <div className="relative h-64 md:h-72 overflow-hidden">
+                <div className="relative h-64 md:h-72 overflow-hidden bg-muted">
                   <img
-                    src={project.thumbnail_url}
+                    src={`${project.thumbnail_url}?v=2`}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
+                    onError={(e) => handleImageError(e, project)}
+                    onLoad={() => handleImageLoad(project)}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
                     <span className="text-white font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Ver Detalhes</span>
