@@ -19,8 +19,8 @@ const Hero = () => {
           DOS SONHOS DO PAPEL
         </h1>
         <p className="text-xs md:text-sm lg:text-base mb-5 md:mb-7 max-w-2xl mx-auto opacity-90 leading-relaxed px-4">
-          WP Engenharia é Lorem ipsum dolor sit amet, consectetur adipiscing<br className="hidden md:block" />
-          elit. Ut purus non, lacinia vel, ullamcorper mauris pulvinar libero leo.
+          A Bosco & Associados oferece soluções completas em projetos e consultoria de<br className="hidden md:block" />
+          Sistemas Eletrônicos. 22 anos transformando ideias em projetos de excelência.
         </p>
         <Button 
           variant="3d" 

@@ -42,12 +42,12 @@ const PortfolioModal = ({ project, open, onOpenChange }: PortfolioModalProps) =>
           />
           <div className="mt-6 space-y-4 text-muted-foreground">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ent tellus, 
-              luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              Este projeto foi desenvolvido com foco em eficiência e tecnologia de ponta, aplicando 
+              soluções personalizadas de sistemas eletrônicos adequadas às necessidades específicas do cliente.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+              Nossa equipe técnica realizou todo o planejamento, projeto executivo e acompanhamento da obra, 
+              garantindo qualidade e cumprimento de prazos estabelecidos com excelência.
             </p>
           </div>
         </div>
