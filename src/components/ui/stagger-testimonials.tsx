@@ -120,6 +120,15 @@ export const StaggerTestimonials: React.FC<StaggerTestimonialsProps> = ({ testim
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
+  // Auto-play effect
+  useEffect(() => {
+    const autoPlayInterval = setInterval(() => {
+      handleMove(1);
+    }, 5000);
+
+    return () => clearInterval(autoPlayInterval);
+  }, [testimonialsList]);
+
   return (
     <div
       className="relative w-full overflow-hidden bg-muted/30"
