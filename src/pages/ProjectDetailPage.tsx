@@ -90,7 +90,7 @@ const ProjectDetailPage = () => {
                 <Button
                   onClick={() => navigate("/portfolio")}
                   variant="outline"
-                  className="mb-8 text-white border-white/30 hover:bg-white/10 hover:border-white transition-all duration-300 animate-fade-in"
+                  className="mb-8 text-white border-2 border-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-secondary transition-all duration-300 animate-fade-in shadow-lg shadow-black/30"
                 >
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Voltar ao Portfólio
@@ -112,14 +112,6 @@ const ProjectDetailPage = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                         <span className="font-medium">{project.location}</span>
-                      </div>
-                    )}
-                    {project.year && (
-                      <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <span className="font-medium">{project.year}</span>
                       </div>
                     )}
                   </div>
