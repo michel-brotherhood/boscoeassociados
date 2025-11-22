@@ -22,7 +22,7 @@ const Header = () => {
       {/* Top bar */}
       <div className="bg-[#2a2a2a] text-white">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-3">
+          <div className="flex items-center justify-between py-5">
             <div className="flex items-center gap-3">
               <img src={logo} alt="Bosco & Associados" className="h-16 w-auto" />
             </div>
