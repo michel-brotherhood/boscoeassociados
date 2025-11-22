@@ -68,8 +68,21 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-4 text-center text-[10px] opacity-75">
-          <p>Bosco & Associados LTDA, Copyright © 2024 – Todos os Direitos Reservados.</p>
+        <div className="border-t border-white/10 pt-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-[10px] opacity-75">
+            <p>Bosco & Associados LTDA, Copyright © 2024 – Todos os Direitos Reservados.</p>
+            <p className="text-center md:text-right">
+              Desenvolvido por{' '}
+              <a 
+                href="https://www.instagram.com/michelbrotherhood/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-yellow-400 hover:text-yellow-300 transition-colors font-medium"
+              >
+                Michel Brotherhood
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
