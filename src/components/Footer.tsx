@@ -69,9 +69,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 text-[10px] opacity-75">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-[10px] opacity-75">
             <p className="md:col-span-3">Bosco & Associados LTDA, Copyright © 2024 – Todos os Direitos Reservados.</p>
-            <p className="text-center md:text-right">
+            <p className="text-left">
               Desenvolvido por{' '}
               <a 
                 href="https://www.instagram.com/michelbrotherhood/" 
